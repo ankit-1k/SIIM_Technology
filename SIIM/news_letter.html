@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>News letter</title>
+    <style>
+     
+    </style>
+</head>
+
+<body onload="loadData()" id="body">
+    <script>
+        var count = 0;
+        function fire() {
+            document.getElementById("LoadMain").style.display = "none"
+            document.getElementById("content").style.display = "block"
+        }
+        function progress() {
+            count++;
+            document.getElementById("progress").value = count;
+            document.getElementById("status").innerHTML = ` ${count}%`
+            if (count == 100) {
+
+            }
+        }
+        // dark theme trail{}
+        function loadData() {
+            setTimeout(fire, 2000);
+           setInterval(progress, 30);
+            
+            fetch('student.json')
+                .then(function (responce) {
+                    return responce.json();
+                })
+                .then(function (value) {
+                    value.map(function(data){
+                        var div = document.createElement("div");
+                        div.innerHTML = `
+                <div class="card" id="card" style="width:200px;">
+                    <div class="card-img">
+                       <img src="img.png" alt="" width="200" height="200">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            
+                        </div>
+                        <div class="card-text">
+                           <p class="text-danger">Student Id: ${data.ID}</p>
+                           <p class="text-dark">Name: ${data.Name}</p> 
+                           
+                        </div>
+                    </div>
+                </div>
+                `;
+                div.className="mb-3 ms-3"
+                        document.getElementById("news").appendChild(div)
+                    })
+                    //console.log(value)
+                })
+        }
+
+    </script>
+    <section class="LoadMain" id="LoadMain">
+        <div class="loader" id="loader" style="display: block; text-align: center; margin-top: 300px;">
+            <h1 class="headLoader">News Letter</h1>
+            <progress class="progress-bar-striped " id="progress" min="1" max="100" value="1"></progress>
+            <span id="status" class="text-success"></span>
+        </div>
+    </section>
+    <section>
+        
+    </section>
+    <section id="content" style="display:none;" class="bg-dark text-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand brand-style" href="#">SIIM Technology</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                      aria-expanded="false">
+                      Courses
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="./about-UI.html">UI</a></li>
+                      <li><a class="dropdown-item" href="./about-java.html">Java</a></li>
+                      <li><a class="dropdown-item" href="./news_letter.html">News Letter</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="card" style="color: black;">
+            <div class="card-title text-center mt-3">
+              <blockquote class="p-0 m-0 text-muted " style="font-weight: bold;">Ministry of Human Resource Development</blockquote>
+              <h2 class="p-0 m-0" style="font-weight: bold;">Goverment Of India</h2>
+            </div>
+            <div class="card-text text-center">
+              <h1 class="text-danger m-0 p-0">Ranks SIIM</h1>
+              <h4>Almost the <span class="text-danger m-0 p-0">'Top 100 Institution'</span>in India </h4>
+              <h5>(Overall Category)</h5>
+            </div>
+          </div>
+        <div class="text-center">
+            <h1 class="text-warning p-3 ">Top Student Of SIIM</h1>
+        </div>
+        <div class="container">
+          <div class="card bg-dark ">
+            <div class="card-body bg-dark text-white">
+              Welcome to the official website of SIIM, where academic excellence meets boundless opportunities. As you explore our online platform, we are thrilled to introduce you to the crème de la crème of our institute—the top student of SIIM. Within our vibrant campus, [Student's Name] has emerged as an outstanding individual, epitomizing brilliance, perseverance, and a relentless pursuit of knowledge. With an impressive track record of academic achievements, [Student's Name] has not only excelled in their studies but also demonstrated exemplary leadership skills and an unwavering commitment to personal and professional growth. Their extraordinary dedication and remarkable accomplishments serve as an inspiration to all fellow students. Join us in celebrating [Student's Name]'s remarkable journey and be motivated to carve your own path towards success. At SIIM, we foster an environment that nurtures excellence, and [Student's Name] embodies the very essence of our institution's vision. Explore our website to discover the transformative opportunities that await you at SIIM, and together, let us unlock your potential for greatness.
+                            
+            </div>
+          </div>  
+        </div>
+        <div id="news" class="d-flex justify-content-center "  style="flex-wrap: wrap;">
+          
+          <!-- json file data here -->
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

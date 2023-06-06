@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="./courses.js"></script>
+    <title>Courses</title>
+    <style>
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .list li {
+            padding: 15px;
+        }
+
+        .list li:hover {
+            background-color: aqua;
+            color: black;
+        }
+
+        .card-title {
+            color: crimson;
+        }
+        .nav-item-2 {
+            position: absolute;
+            top: 10px;
+            right: 40px;
+        }
+    </style>
+</head>
+
+<body style="background-color: aliceblue;" >
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand ms-4" href="index.html">SIIM Technology</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" title="Back" href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                        <div class="nav-item  d-flex">
+                            <span class="mt-1 ps-3"><img src="./img/day-and-night.png" height="20" width="20"
+                                    alt=""></span>
+                            <a class="nav-link" title="Dark Mode" onclick="fireDark()">
+                                <div class="form-switch">
+                                    <input type="checkbox" id="checkbox" class="form-check-input">
+                                </div>
+                            </a>
+                        </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class=" bg-dark text-white">
+        <ul class="list" >
+            <li onclick="frontend()" style="cursor: pointer;">Frontend</li>
+            <li onclick="backend()" style="cursor: pointer;">Backend</li>
+            <li onclick="fullstack()" style="cursor: pointer;">Fullstack</li>
+        </ul>
+    </div>
+    <h3 class="text-center text-warning" onclick="frontend()">Java Frontend Devlopment</h3>
+    <div class="combo-card " id="frontend" style="display: flex; justify-content: center; flex-wrap: wrap;">
+        <div class="card card1" style="width: 500px;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>HTML</h5>
+                </div>
+                <div class="card-text">
+                    HTML Syntax and Structure,
+                    HTML Elements and Tags,
+                    HTML Attributes,
+                    Headings and Paragraphs,
+                    Text Formatting and Styling,
+                    Lists (Ordered, Unordered, Definition),
+                    Links and Anchors,
+                    Images and Multimedia,
+                    Tables,
+                    Forms and Input Elements,
+                    Semantic HTML,
+                    HTML5 Features,
+                    Metadata,
+                    Document Structure,
+                    Inline vs. Block-level Elements,
+                    HTML Entities and Special Characters,
+                    Handling HTML Forms,
+                    HTML Validation,
+                    Iframes,
+                    HTML5 APIs
+                </div>
+            </div>
+        </div>
+        <div class="card card2" style="width: 500px;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5> CSS</h5>
+                </div>
+                <div class="card-text">
+                    CSS Syntax and Selectors,
+                    CSS Box Model,
+                    CSS Units of Measurement,
+                    CSS Colors and Backgrounds,
+                    CSS Typography,
+                    CSS Layout and Positioning,
+                    CSS Flexbox,
+                    CSS Grid,
+                    CSS Transitions and Animations,
+                    CSS Media Queries and Responsive Design,
+                    CSS Pseudo-classes and Pseudo-elements,
+                    CSS Specificity and Cascade,
+                    CSS Vendor Prefixes,
+                    CSS Box Shadow and Border,
+                    CSS Transformations and 2D/3D Transforms,
+                    CSS Filters and Blend Modes,
+                    CSS Variables (Custom Properties),
+                    CSS Grid Frameworks (e.g., Bootstrap, Foundation),
+                    CSS Preprocessors (e.g., Sass, Less),
+                    CSS Methodologies (e.g., BEM, OOCSS, SMACSS)
+                </div>
+            </div>
+        </div>
+        <div class="card card3" style="width: 500px;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>JavaScript</h5>
+                </div>
+                <div class="card-text">
+                    JavaScript Syntax and Variables,
+                    Data Types and Data Structures in JavaScript,
+                    Operators and Expressions,
+                    Control Flow and Conditional Statements,
+                    Loops and Iteration,
+                    Functions and Function Expressions,
+                    Objects and Object-oriented Programming (OOP),
+                    Arrays and Array Methods,
+                    Working with Strings in JavaScript,
+                    DOM Manipulation and Event Handling,
+                    Asynchronous JavaScript (Callbacks, Promises, Async/Await),
+                    Error Handling and Debugging in JavaScript,
+                    JSON (JavaScript Object Notation),
+                    JavaScript Modules and Module Systems (CommonJS, ES modules),
+                    JavaScript Libraries and Frameworks (jQuery, React, Angular),
+                    AJAX (Asynchronous JavaScript and XML),
+                    Regular Expressions (RegEx) in JavaScript,
+                    Browser Object Model (BOM),
+                    Client-side Storage (Cookies, Local Storage, Session Storage),
+                    JavaScript Testing (Unit Testing, Test Frameworks)
+                </div>
+            </div>
+        </div>
+        <div class="card card4" style="width: 500px;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>React js</h5>
+                </div>
+                <div class="card-text">
+                    React Components and JSX,
+                    React Props and State,
+                    React Hooks (useState, useEffect, useContext, etc.),
+                    React Router (Client-side routing),
+                    React Forms and Form Handling,
+                    React Events and Event Handling,
+                    React Lifecycle Methods,
+                    React Context API (State management),
+                    React Fragments,
+                    React Conditional Rendering,
+                    React Lists and Keys,
+                    React Styling and CSS-in-JS,
+                    React Testing (Unit Testing, Testing Frameworks),
+                    React Error Handling,
+                    React Deployment and Production Builds,
+                    React Performance Optimization,
+                    React Redux (State management library),
+                    React Server-side Rendering (SSR),
+                    React Lazy Loading and Code Splitting,
+                    React Native (Building mobile applications)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section 2 Backend -->
+    <h3 class="text-center text-warning" onclick="backend()">Backend Devlopment</h3>
+    <div class="combo-card-backend" id="backend" style="display: none; justify-content: center; flex-wrap: wrap;">
+        <div class="card card5" style="width: 500px;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>Advance Java</h5>
+                </div>
+                <div class="card-text">
+                    Generics,
+                    Reflection,
+                    Annotations,
+                    Java concurrency and multithreading,
+                    Java I/O and NIO (New I/O),
+                    Java Reflection API,
+                    Java Streams API,
+                    Java 8 features (Lambda expressions, functional interfaces),
+                    Design patterns (e.g., Singleton, Factory, Observer),
+                    Java memory management and garbage collection,
+                    Networking in Java,
+                    Java Security (Cryptography, Secure coding practices),
+                    Java performance optimization techniques,
+                    Java Enterprise Edition (Java EE) technologies (e.g., JavaServer Faces, Enterprise JavaBeans),
+                    Java Messaging Services (JMS),
+                    Java Persistence API (JPA),
+                    Web services with Java (SOAP, RESTful),
+                    JavaFX (for desktop application development),
+                    JVM (Java Virtual Machine) internals and bytecode manipulation,
+                    Asynchronous programming with CompletableFuture and Reactive programming with RxJava.
+                </div>
+            </div>
+        </div>
+        <div class="card card6" style="width: 500px;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>Spring</h5>
+                </div>
+                <div class="card-text">
+                    Spring MVC (Model-View-Controller) framework,
+                    Spring Data JPA (Java Persistence API),
+                    Spring Security,
+                    Spring Boot,
+                    Spring Cloud,
+                    Spring Integration,
+                    Spring AOP (Aspect-Oriented Programming),
+                    Spring WebFlux (Reactive programming with Spring),
+                    Spring Batch (for batch processing),
+                    Spring Testing (JUnit, Mockito, etc.),
+                    Spring RESTful Web Services (Spring Web, Spring REST),
+                    Spring Caching (using Spring Cache Abstraction),
+                    Spring WebSocket,
+                    Spring Profiles and Environment,
+                    Spring Transactions (Declarative transaction management),
+                    Spring Actuator (Monitoring and managing Spring applications),
+                    Spring Boot Actuator (Production-ready monitoring and management),
+                    Spring Security OAuth (Authentication and authorization with OAuth),
+                    Spring Boot Data Redis (Redis caching and data storage),
+                    Spring Cloud Netflix (Integration with Netflix components like Eureka, Ribbon, Zuul)
+                </div>
+            </div>
+        </div>
+        <div class="card card7" style="width: 500px;">
+            <div class="card-body">
+                <div class="card-title">
+                    <h5>MySQL</h5>
+                </div>
+                <div class="card-text">
+                    Stored Procedures, Functions, and Triggers,
+                    Indexing and Query Optimization,
+                    Advanced SQL Queries (Subqueries, Joins, Grouping, etc.),
+                    Views and Materialized Views,
+                    Transactions and Concurrency Control,
+                    Partitioning and Sharding,
+                    Replication and High Availability,
+                    Full-Text Search,
+                    Performance Tuning and Monitoring,
+                    MySQL Security (User Management, Permissions, SSL),
+                    InnoDB Storage Engine and its features,
+                    MySQL JSON Data Type and JSON Functions,
+                    Spatial Data and GIS (Geographic Information System) in MySQL,
+                    MySQL Performance Schema and Query Profiling,
+                    MySQL Enterprise Backup and Point-in-Time Recovery,
+                    MySQL Workbench and Administration Tools,
+                    Data Warehousing and Business Intelligence with MySQL,
+                    MySQL Connector/J and JDBC (Java Database Connectivity),
+                    MySQL Replication and Clustering,
+                    MySQL InnoDB Cluster and Group Replication
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3 full stack -->
+    <h3 class="text-center" onclick="fullstack()" id="headfullstack">FullStack Devlopment</h3>
+    <div class="combo-card" id="fullstack" style="display: none; justify-content: center; flex-wrap: wrap;">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        function Addition(a, b) {
+            return a + b;
+        }
+        document.write("Addition of two number is " + Addition(12, 13))
+        function getProducts() {
+
+        } document.write("<br>")
+        // getProducts() rerurn array of object.
+        function getProducts() {
+            return [
+                {
+                    Name: "tv",
+                    Price: "12000"
+                },
+                {
+                    Name: "Moblie",
+                    Price: "11000"
+                }
+            ]
+        }
+        getProducts().map(function (value) {
+            document.write(value.Name);
+            document.write(value.Price)
+        })
+        getProducts()
+        // function have multiple returns
+        var conf = confirm("Click ok for true | Click Cancle For false")
+        function MuttipleReturn() {
+            if (conf == true) {
+                alert("Mission Success")
+            } else {
+                alert("Mission Failled Try again")
+            }
+        }
+        MuttipleReturn()
+        document.write("<br>")
+        // closure In JS
+        function Outer() {
+            var a = 10;
+            function Inner() {
+                var b = 20;
+                var c = a + b;
+                document.write(c)
+            } Inner()
+        } Outer()
+        function Outer2() {
+            var a = 10;
+            function Inner() {
+                var b = 20;
+                var c = a + b;
+                return parseInt(c);
+            }
+            document.write(Inner());
+        }
+        Outer2();
+        // Arrow Function.
+        function Arrow() {
+            fetch("https://fakestoreapi.com/products")
+                .then(response => { return response.json() })
+                .then(values => {
+                    values.map(value => {
+                        document.writeln(value.id)
+                    })
+                })
+        } //Arrow() //to access All the methods then comment this Arrow()
+        document.write("<br>")
+        function* ReadValues() {
+            yield 10;
+            yield 20;
+            yield 30;
+        }
+        document.write(ReadValues().next());
+    </script>
+</body>
+
+</html>
